@@ -1,0 +1,6 @@
+interface:
+  display_name: "Research Engineering Scaffold"
+  short_description: "Create reproducible research project scaffolds."
+  default_prompt: "Use `$research-engineering-scaffold to scaffold a reproducible, auditable research project."
+
+
