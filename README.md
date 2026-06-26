@@ -58,7 +58,7 @@ Key governance surfaces:
 - `registries/evidence_ledger.tsv`: claim-to-evidence tracking
 - `registries/figure_manifest.tsv`: figure/source-data traceability
 - `registries/ai_usage_log.tsv`: AI assistance log
-- `scripts/00_setup/validate_science_os.py`: scaffold validation script
+- `scripts/00_setup/validate_research_engineering_scaffold.py`: scaffold validation script
 
 ## Installation
 
@@ -99,7 +99,7 @@ Initialize Git and create the first commit.
 The skill will use:
 
 ```text
-scripts/scaffold_research_os.py
+scripts/scaffold_research_engineering.py
 ```
 
 to generate the project scaffold.
@@ -109,7 +109,7 @@ to generate the project scaffold.
 You can also run the scaffolding script directly.
 
 ```powershell
-python C:\Users\<USER>\.codex\skills\research-engineering-scaffold\scripts\scaffold_research_os.py `
+python C:\Users\<USER>\.codex\skills\research-engineering-scaffold\scripts\scaffold_research_engineering.py `
   --project-dir E:\Codex\MyProject `
   --project-name "MyProject" `
   --title "Working title" `
@@ -125,7 +125,7 @@ After scaffolding, validate the generated project:
 
 ```powershell
 cd E:\Codex\MyProject
-python scripts/00_setup/validate_science_os.py
+python scripts/00_setup/validate_research_engineering_scaffold.py
 ```
 
 ## Updating
@@ -158,4 +158,3 @@ python C:\Users\<USER>\.codex\skills\.system\skill-creator\scripts\quick_validat
 The repository is the project memory.
 
 Chat history is useful for reasoning, but not reliable as the source of truth. Project assumptions, analysis standards, data provenance, results, figures, and claims should be recorded in versioned files.
-

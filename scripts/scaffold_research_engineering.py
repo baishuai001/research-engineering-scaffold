@@ -172,7 +172,7 @@ def templates() -> dict[str, str]:
 
         ## Current Phase
 
-        Phase 0: research operating system scaffold.
+        Phase 0: research engineering scaffold.
 
         ## Project
 
@@ -190,7 +190,7 @@ def templates() -> dict[str, str]:
 
         ## Completed
 
-        - Created standardized Research OS scaffold.
+        - Created standardized Research Engineering Scaffold.
 
         ## Active Questions
 
@@ -216,7 +216,7 @@ def templates() -> dict[str, str]:
 
         - [ ] Fill mandatory fields in `registries/data_registry.tsv`.
         - [ ] Define primary endpoints, metrics, signatures, or feature sets in `config/`.
-        - [ ] Run `python scripts/00_setup/validate_science_os.py`.
+        - [ ] Run `python scripts/00_setup/validate_research_engineering_scaffold.py`.
         - [ ] Record the initial software environment.
 
         ## Feasibility Gate 1
@@ -456,7 +456,7 @@ def templates() -> dict[str, str]:
         Run:
 
         ```bash
-        python scripts/00_setup/validate_science_os.py
+        python scripts/00_setup/validate_research_engineering_scaffold.py
         ```
         """,
         "docs/review_checklist.md": """
@@ -557,10 +557,10 @@ def templates() -> dict[str, str]:
         "registries/data_registry.tsv": "dataset_id\tshort_name\tsource_url_or_reference\taccess_route\tmodality_or_source_type\tdomain_or_population\tsample_count_or_scope\tendpoints_or_outcomes\tlicense_or_terms\tverification_status\tplanned_role\tlocal_or_remote_path\tnotes\nprimary_source\t{{primary_data}}\tTODO\tTODO\tTODO\t{{domain}}\tTODO\t{{primary_endpoint}}\tTODO\tcandidate\tprimary\tTODO\tVerify before analysis.\n",
         "registries/evidence_ledger.tsv": "claim_id\tclaim_text\tstatus\tdataset_id\tanalysis_script\tresult_table\tfigure_panel\tevidence_strength\thuman_review\treviewer\tnotes\nC001\tCore concept can be measured with predefined definitions.\tproposed\tprimary_source\tTODO\tTODO\tTODO\tnot_started\tpending\tTODO\tFeasibility Gate 1.\n",
         "registries/figure_manifest.tsv": "figure_id\tpanel_id\tclaim_id\tdataset_id\tsource_data\tanalysis_script\tfigure_path\tstatus\treviewer\tnotes\nF1\tA\tC001\tprimary_source\tTODO\tTODO\tTODO\tplanned\tTODO\tProject overview.\n",
-        "registries/analysis_task_registry.tsv": "task_id\ttask_name\tstatus\tdataset_id\tinputs\tconfigs\tscript\toutputs\tlog_path\towner\tnotes\nT001\tValidate Research OS scaffold\tready\tNA\tNA\tNA\tscripts/00_setup/validate_science_os.py\tresults/reports/science_os_validation.txt\tresults/logs/science_os_validation.log\tCodex\tRun before handoff.\n",
+        "registries/analysis_task_registry.tsv": "task_id\ttask_name\tstatus\tdataset_id\tinputs\tconfigs\tscript\toutputs\tlog_path\towner\tnotes\nT001\tValidate Research Engineering Scaffold\tready\tNA\tNA\tNA\tscripts/00_setup/validate_research_engineering_scaffold.py\tresults/reports/research_engineering_scaffold_validation.txt\tresults/logs/research_engineering_scaffold_validation.log\tCodex\tRun before handoff.\n",
         "registries/claims_registry.tsv": "claim_id\tclaim_family\tclaim_text\tallowed_strength\tcurrent_status\trequired_evidence\tnotes\nC001\tmethod\tCore concept can be measured with predefined definitions.\tdescriptive\tproposed\tReference or source validation\tNo manuscript claim until checked.\n",
         "registries/validation_matrix.tsv": "analysis_component\tdiscovery_dataset\tvalidation_dataset\tsensitivity_analysis\tstatus\tnotes\ncore_measurement\tprimary_source\tTODO\talternative_definition\tnot_started\tDefine project-specific validation.\n",
-        "registries/ai_usage_log.tsv": "date\ttool\ttask\tfiles_changed\thuman_review_status\tnotes\n{{today}}\tCodex\tScaffold Research OS\trepository_scaffold\tpending\tInitial standardized scaffold.\n",
+        "registries/ai_usage_log.tsv": "date\ttool\ttask\tfiles_changed\thuman_review_status\tnotes\n{{today}}\tCodex\tScaffold Research Engineering project\trepository_scaffold\tpending\tInitial standardized scaffold.\n",
         "registries/data_access_log.tsv": "date\tdataset_id\taction\tuser_or_tool\tpath_or_url\tstatus\tnotes\n{{today}}\tNA\tcreate_project_scaffold\tCodex\tlocal\tcomplete\tNo data downloaded.\n",
         "registries/literature_evidence_table.tsv": "reference_id\tcitation_or_title\tclaim_supported\tsource_type\tverification_status\turl_or_doi\tnotes\nL001\tTODO\tProject rationale\tprimary_source_or_review\tto_verify\tTODO\tVerify before citing.\n",
         "hypotheses/H01_core_measurement.md": """
@@ -584,7 +584,7 @@ def templates() -> dict[str, str]:
 
         Define conditions for changing the project framing.
         """,
-        "scripts/00_setup/validate_science_os.py": VALIDATOR_TEMPLATE,
+        "scripts/00_setup/validate_research_engineering_scaffold.py": VALIDATOR_TEMPLATE,
         "scripts/00_setup/bootstrap_project.R": """
         project_root <- normalizePath(file.path(dirname(sys.frame(1)$ofile), "..", ".."), mustWork = TRUE)
         setwd(project_root)
@@ -634,7 +634,7 @@ def templates() -> dict[str, str]:
         - [ ] I read `AGENTS.md`.
         - [ ] I updated state files or explain why not.
         - [ ] I updated relevant registries.
-        - [ ] I ran `python scripts/00_setup/validate_science_os.py`.
+        - [ ] I ran `python scripts/00_setup/validate_research_engineering_scaffold.py`.
         - [ ] I did not commit secrets or raw controlled data.
         """,
         ".github/ISSUE_TEMPLATE/analysis_task.yml": """
@@ -675,8 +675,8 @@ def templates() -> dict[str, str]:
             validations:
               required: true
         """,
-        ".github/workflows/science-os-check.yml": """
-        name: science-os-check
+        ".github/workflows/research-engineering-scaffold-check.yml": """
+        name: research-engineering-scaffold-check
 
         on:
           pull_request:
@@ -692,8 +692,8 @@ def templates() -> dict[str, str]:
               - uses: actions/setup-python@v5
                 with:
                   python-version: "3.12"
-              - name: Validate Research OS scaffold
-                run: python scripts/00_setup/validate_science_os.py
+              - name: Validate Research Engineering Scaffold
+                run: python scripts/00_setup/validate_research_engineering_scaffold.py
         """,
     }
 
@@ -809,12 +809,12 @@ def main() -> int:
                 errors.append(f"possible secret pattern `{pattern}` found in {rel}")
 
     if errors:
-        print("Research OS validation failed:")
+        print("Research Engineering Scaffold validation failed:")
         for error in errors:
             print(f"- {error}")
         return 1
 
-    print("Research OS validation passed.")
+    print("Research Engineering Scaffold validation passed.")
     print(f"Checked {len(REQUIRED_FILES)} required files and {len(TSV_SCHEMAS)} TSV schemas.")
     return 0
 
@@ -825,7 +825,7 @@ if __name__ == "__main__":
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Scaffold a standardized Research OS project.")
+    parser = argparse.ArgumentParser(description="Scaffold a standardized research engineering project.")
     parser.add_argument("--project-dir", required=True, help="Target project directory.")
     parser.add_argument("--project-name", required=True, help="Human-readable project name.")
     parser.add_argument("--title", default="", help="Working project or manuscript title.")
@@ -889,15 +889,14 @@ def main() -> int:
             run(["git", "init", "-b", "main"], cwd=project_dir)
         if args.commit:
             run(["git", "add", "."], cwd=project_dir)
-            run(["git", "commit", "-m", "Initialize Research OS"], cwd=project_dir)
+            run(["git", "commit", "-m", "Initialize Research Engineering Scaffold"], cwd=project_dir)
 
-    print(f"Research OS scaffolded at: {project_dir}")
+    print(f"Research Engineering Scaffold created at: {project_dir}")
     print(f"Files written: {len(written)}")
     print(f"Existing files kept: {len(kept)}")
-    print("Next: run `python scripts/00_setup/validate_science_os.py` from the project root.")
+    print("Next: run `python scripts/00_setup/validate_research_engineering_scaffold.py` from the project root.")
     return 0
 
 
 if __name__ == "__main__":
     sys.exit(main())
-

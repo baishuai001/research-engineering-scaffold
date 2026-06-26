@@ -1,6 +1,6 @@
 ---
 name: research-engineering-scaffold
-description: Create or update a standardized, reproducible, auditable research-project operating system. Use when the user wants to start a new research project, scaffold project governance files, make a project transferable/reproducible/auditable, standardize Codex project memory, create data/analysis/figure/evidence registries, or adapt the mregTLS-NEXUS scientific operating-system pattern to another project.
+description: Create or update a standardized, reproducible, auditable research-project engineering scaffold. Use when the user wants to start a new research project, scaffold project governance files, make a project transferable/reproducible/auditable, standardize Codex project memory, create data/analysis/figure/evidence registries, or adapt the mregTLS-NEXUS governance pattern to another project.
 ---
 
 # Research Engineering Scaffold
@@ -12,7 +12,7 @@ Use this skill to turn a research idea into a durable project system. The reposi
 When the user asks to start a new project or standardize an existing one, run:
 
 ```bash
-python <skill_dir>/scripts/scaffold_research_os.py --project-dir <target_dir> --project-name "<name>" --title "<working title>" --domain "<domain>"
+python <skill_dir>/scripts/scaffold_research_engineering.py --project-dir <target_dir> --project-name "<name>" --title "<working title>" --domain "<domain>"
 ```
 
 Optional parameters:
@@ -32,11 +32,11 @@ Use `--overwrite` only when the user explicitly wants existing Research Engineer
 ## Workflow
 
 1. Determine the target project directory and project name.
-2. Run `scripts/scaffold_research_os.py` with project-specific parameters.
+2. Run `scripts/scaffold_research_engineering.py` with project-specific parameters.
 3. Run the generated validator:
 
 ```bash
-python scripts/00_setup/validate_science_os.py
+python scripts/00_setup/validate_research_engineering_scaffold.py
 ```
 
 4. If requested, initialize Git with `--init-git --commit`.
@@ -73,7 +73,7 @@ Generated projects include:
 - `registries/evidence_ledger.tsv`: claim evidence chain.
 - `registries/figure_manifest.tsv`: figure source tracking.
 - `registries/ai_usage_log.tsv`: AI usage record.
-- `scripts/00_setup/validate_science_os.py`: scaffold validator.
+- `scripts/00_setup/validate_research_engineering_scaffold.py`: scaffold validator.
 
 ## Customization Rules
 
@@ -102,7 +102,7 @@ For advanced adaptation guidance, read `references/customization.md`.
 Before considering the scaffold complete:
 
 ```bash
-python scripts/00_setup/validate_science_os.py
+python scripts/00_setup/validate_research_engineering_scaffold.py
 ```
 
 The validator must pass. If Git was initialized, `git status --short` should be clean after the initial commit unless the user asked for uncommitted work.
